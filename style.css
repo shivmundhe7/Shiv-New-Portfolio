@@ -215,7 +215,7 @@ header.scrolled {
     transform: rotate(-45deg) translate(7px, -6px);
 }
 
-/* Sections */
+
 .section {
     min-height: 100vh;
     display: flex;
@@ -974,6 +974,56 @@ header.scrolled {
 .skills {
     background: var(--bg-primary);
     position: relative;
+}
+
+#contributions img {
+    width: 100%;
+    max-width: 900px;
+    margin: 20px auto;
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.connect {
+    text-align: center;
+    padding: 80px 20px;
+    background: var(--bg-primary);
+}
+
+.connect-text {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: var(--text-color, #555);
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    background: #3d3d3d;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    transform: translateY(-5px);
+    background: #0073e6;
+}
+
+.social-link i {
+    font-size: 1.3rem;
 }
 
 .skills::before {
