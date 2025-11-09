@@ -55,14 +55,12 @@ document.addEventListener('DOMContentLoaded', function () {
         setTimeout(typeWriter, typingSpeed);
     }
 
-    // Mobile Menu Toggle
     function toggleMobileMenu() {
         hamburger?.classList.toggle('active');
         navMenu?.classList.toggle('active');
         document.body.style.overflow = navMenu?.classList.contains('active') ? 'hidden' : 'auto';
     }
 
-    // Smooth Scroll Navigation
     function smoothScroll(event) {
         event.preventDefault();
         const targetId = this.getAttribute('href');
@@ -79,18 +77,15 @@ document.addEventListener('DOMContentLoaded', function () {
                     behavior: 'smooth'
                 });
 
-                // Close mobile menu
                 if (navMenu?.classList.contains('active')) {
                     toggleMobileMenu();
                 }
 
-                // Update active state
                 updateActiveNavLink(targetId);
             }
         }
     }
 
-    // Update Active Navigation Link
     function updateActiveNavLink(activeId) {
         navLinks.forEach(link => {
             link.classList.remove('active');
@@ -100,7 +95,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Scroll-based Header Effects
     function handleScroll() {
         const scrollY = window.scrollY;
 
@@ -111,7 +105,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Scroll-based Active Navigation
     function updateActiveNavFromScroll() {
         const sections = document.querySelectorAll('section[id]');
         const scrollPosition = window.scrollY + (header?.offsetHeight || 80);
@@ -129,7 +122,6 @@ document.addEventListener('DOMContentLoaded', function () {
             const id = '#' + activeSection.getAttribute('id');
             updateActiveNavLink(id);
 
-            // Update URL hash
             if (history.pushState) {
                 history.pushState(null, null, id);
             }
@@ -138,21 +130,18 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Throttled scroll listener
     let scrollTimeout;
     window.addEventListener('scroll', () => {
         clearTimeout(scrollTimeout);
         scrollTimeout = setTimeout(updateActiveNavFromScroll, 50);
     });
 
-    // Intersection Observer for Animations
     const animationObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.style.opacity = '1';
                 entry.target.style.transform = 'translateY(0)';
 
-                // Add stagger effect for multiple elements
                 const siblings = entry.target.parentElement?.querySelectorAll('.animate-on-scroll');
                 if (siblings && siblings.length > 1) {
                     siblings.forEach((sibling, index) => {
@@ -168,8 +157,6 @@ document.addEventListener('DOMContentLoaded', function () {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     });
-
-    // Setup animations for elements
     function setupAnimations() {
         const animatedElements = document.querySelectorAll(
             '.hero-stats .stat, .about-highlights .highlight, .floating-card, .social-icon'
@@ -184,8 +171,6 @@ document.addEventListener('DOMContentLoaded', function () {
             animationObserver.observe(el);
         });
     }
-
-    // Button Click Handlers
     function handleButtonClick(event) {
         const button = event.currentTarget;
         const ripple = document.createElement('span');
