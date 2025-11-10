@@ -64,7 +64,6 @@ document.addEventListener('DOMContentLoaded', function () {
     function smoothScroll(event) {
         event.preventDefault();
         const targetId = this.getAttribute('href');
-
         if (targetId && targetId.startsWith('#')) {
             const targetElement = document.querySelector(targetId);
 
