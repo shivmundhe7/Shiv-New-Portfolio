@@ -69,7 +69,6 @@ document.addEventListener('DOMContentLoaded', function () {
             if (targetElement) {
                 const headerHeight = header?.offsetHeight || 80;
                 const offsetTop = targetElement.offsetTop - headerHeight;
-
                 window.scrollTo({
                     top: offsetTop,
                     behavior: 'smooth'
