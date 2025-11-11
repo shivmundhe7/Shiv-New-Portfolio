@@ -60,7 +60,6 @@ document.addEventListener('DOMContentLoaded', function () {
         navMenu?.classList.toggle('active');
         document.body.style.overflow = navMenu?.classList.contains('active') ? 'hidden' : 'auto';
     }
-
     function smoothScroll(event) {
         event.preventDefault();
         const targetId = this.getAttribute('href');
