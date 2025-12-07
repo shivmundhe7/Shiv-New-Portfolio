@@ -1,6 +1,4 @@
-// Enhanced JavaScript for Portfolio Website
 document.addEventListener('DOMContentLoaded', function () {
-    // DOM Elements
     const header = document.querySelector('header');
     const navbar = document.querySelector('.navbar');
     const navLinks = document.querySelectorAll('.nav-link');
@@ -12,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const aboutBtn = document.querySelector('.about-btn');
     const socialIcons = document.querySelectorAll('.social-icon');
 
-    // Professions for typewriter effect
     const professions = [
         'Full-Stack Developer',
         'Frontend Engineer',
@@ -44,12 +41,12 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         if (!isDeleting && charIndex === currentProfession.length) {
-            typingSpeed = 2000; // Pause at end
+            typingSpeed = 2000;
             isDeleting = true;
         } else if (isDeleting && charIndex === 0) {
             isDeleting = false;
             professionIndex = (professionIndex + 1) % professions.length;
-            typingSpeed = 500; // Pause before next word
+            typingSpeed = 500;
         }
 
         setTimeout(typeWriter, typingSpeed);
