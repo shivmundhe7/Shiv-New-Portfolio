@@ -8,39 +8,32 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("a-_NF9Zjqd1ckZiZo"); // EmailJS public key updated
+        })();
+    </script>
 </head>
 
 <body>
+    <div class="custom-cursor"></div>
+    <div class="cursor-follower"></div>
+
     <header>
         <nav class="navbar">
-            <div class="nav-brand">Shiv Mundhe<span class="brand-dot">.</span></div>
+            <div class="nav-brand">Shiv<span class="accent">.</span>Mundhe</div>
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link active">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#service" class="nav-link">Services</a></li>
                 <li><a href="#project" class="nav-link">Projects</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
-                <div class="social-links">
-                    <a href="+91 79 7293 2282" aria-label="WhatsApp" class="social-icon whatsapp">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/shivshankar-mundhe-4a0320367/" aria-label="LinkedIn"
-                        class="social-icon linkedin">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://github.com/shivmundhe7" aria-label="GitHub" class="social-icon github">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.instagram.com/shiv_mundhe_7/" aria-label="Instagram"
-                        class="social-icon instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </div>
             </ul>
             <div class="nav-cta">
-                <a href="#contact" class="cta-btn">Let's Talk</a>
+                <a href="https://wa.me/917972932282" class="cta-btn">Let's Talk</a>
             </div>
             <div class="hamburger">
                 <span></span>
@@ -136,7 +129,7 @@
                         <div class="image-wrapper">
                             <img src="mainimg.jpeg" alt="About Shiv Mundhe" class="about-img">
                             <div class="experience-badge">
-                                <span class="badge-number">1+</span>
+                                <span class="badge-number">1.5+</span>
                                 <span class="badge-text">Years<br>Experience</span>
                             </div>
                         </div>
@@ -145,23 +138,35 @@
                     <div class="about-text">
                         <h2 class="section-title">About Me</h2>
                         <div class="about-description">
-                            <p>Hi, I’m Shiv, a passionate Java Developer and Engineering student with a deep
-                                interest in building scalable, efficient, and user-focused applications. I love turning
-                                ideas into reality through clean code, problem-solving, and continuous learning.
+                            <p>Hi, I’m Shiv, a passionate <span class="accent">Java Developer</span> and Engineering student. I love turning
+                                ideas into reality through clean code and continuous learning.</p>
+                            
+                            <div class="terminal-window">
+                                <div class="terminal-header">
+                                    <div class="dot red"></div>
+                                    <div class="dot yellow"></div>
+                                    <div class="dot green"></div>
+                                </div>
+                                <div class="terminal-body">
+                                    <div class="line">
+                                        <span class="code-keyword">public class</span> <span class="code-func">ShivMundhe</span> {
+                                    </div>
+                                    <div class="line">&nbsp;&nbsp;<span class="code-keyword">private String</span> role = <span class="code-string">"Java Developer"</span>;</div>
+                                    <div class="line">&nbsp;&nbsp;<span class="code-keyword">private String[]</span> stack = {<span class="code-string">"Spring Boot"</span>, <span class="code-string">"Hibernate"</span>, <span class="code-string">"MySQL"</span>};</div>
+                                    <div class="line">&nbsp;&nbsp;</div>
+                                    <div class="line">&nbsp;&nbsp;<span class="code-keyword">public void</span> <span class="code-func">buildApplication</span>() {</div>
+                                    <div class="line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">while</span>(<span class="code-keyword">true</span>) {</div>
+                                    <div class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coffee.drink();</div>
+                                    <div class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code.write();</div>
+                                    <div class="line">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+                                    <div class="line">&nbsp;&nbsp;}</div>
+                                    <div class="line">}</div>
+                                </div>
+                            </div>
 
-                                Currently pursuing my B.E. in Mechanical Engineering from SPPU, I’m also mastering Java,
-                                DSA, Backend Development, and System Design through advanced online programs. My focus
-                                lies in developing high-performance backend systems using Java, Spring Boot, and MySQL,
-                                while continuously improving my understanding of object-oriented programming and data
-                                structures.
-                            </p>
-
-                            <p>Beyond Java, I’m skilled in HTML, CSS, JavaScript, and Node.js, enabling me to work
-                                across the full stack — from designing responsive UIs to building RESTful APIs.
-
-                                When I’m not coding, I enjoy exploring new technologies, creating digital projects, and
-                                streaming games on YouTube. My goal is to grow as a Full-Stack Java Developer and
-                                contribute to impactful software that makes people’s lives easier.</p>
+                            <p style="margin-top: 1.5rem;">Currently pursuing my B.E. in Mechanical Engineering from SPPU, I’m also mastering Java,
+                                DSA, Backend Development, and System Design. My focus
+                                lies in developing high-performance backend systems using Java and Spring Boot.</p>
                         </div>
 
                         <div class="about-highlights">
@@ -184,7 +189,7 @@
                                 <i class="fas fa-briefcase"></i>
                                 <div>
                                     <h4>Experience</h4>
-                                    <p>1+ Years</p>
+                                    <p>1.5+ Years</p>
                                 </div>
                             </div>
                         </div>
@@ -208,118 +213,67 @@
                     <div class="skills-grid">
 
                         <div class="skill-category">
-                            <h3>Frontend Development</h3>
+                            <h3>Frontend</h3>
                             <div class="skill-items">
                                 <div class="skill-item">
-                                    <i class="fab fa-html5"></i>
+                                    <i class="devicon-html5-plain colored"></i>
                                     <span>HTML5</span>
-                                    <div class="skill-bar">
-                                        <div class="skill-fill" style="width: 95%"></div>
-                                    </div>
                                 </div>
                                 <div class="skill-item">
-                                    <i class="fab fa-css3-alt"></i>
+                                    <i class="devicon-css3-plain colored"></i>
                                     <span>CSS3</span>
-                                    <div class="skill-bar">
-                                        <div class="skill-fill" style="width: 90%"></div>
-                                    </div>
                                 </div>
                                 <div class="skill-item">
-                                    <i class="fab fa-js-square"></i>
+                                    <i class="devicon-javascript-plain colored"></i>
                                     <span>JavaScript</span>
-                                    <div class="skill-bar">
-                                        <div class="skill-fill" style="width: 75%"></div>
-                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <i class="devicon-bootstrap-plain colored"></i>
+                                    <span>Bootstrap</span>
                                 </div>
                             </div>
                         </div>
 
                         <div class="skill-category">
-                            <h3>Backend Development</h3>
+                            <h3>Backend</h3>
                             <div class="skill-items">
                                 <div class="skill-item">
-                                    <i class="fas fa-server"></i>
+                                    <i class="devicon-java-plain colored"></i>
                                     <span>Java</span>
-                                    <div class="skill-bar">
-                                        <div class="skill-fill" style="width: 60%"></div>
-                                    </div>
                                 </div>
                                 <div class="skill-item">
-                                    <i class="fab fa-python"></i>
-                                    <span>Python</span>
-                                    <div class="skill-bar">
-                                        <div class="skill-fill" style="width: 70%"></div>
-                                    </div>
-                                </div>
-                                <div class="skill-item">
-                                    <i class="fas fa-cubes"></i>
+                                    <i class="devicon-spring-plain colored"></i>
                                     <span>Spring Boot</span>
-                                    <div class="skill-bar">
-                                        <div class="skill-fill" style="width: 20%"></div>
-                                    </div>
-
                                 </div>
                                 <div class="skill-item">
-                                    <i class="fas fa-cubes"></i>
-                                    <span>C</span>
-                                    <div class="skill-bar">
-                                        <div class="skill-fill" style="width: 70%"></div>
-                                    </div>
-
+                                    <i class="devicon-python-plain colored"></i>
+                                    <span>Python</span>
                                 </div>
                             </div>
                         </div>
+
                         <div class="skill-category">
-                            <h3>DevOps & Tools</h3>
+                            <h3>Tools & Design</h3>
                             <div class="skill-items">
                                 <div class="skill-item">
-                                    <i class="fab fa-git-alt"></i>
+                                    <i class="devicon-git-plain colored"></i>
                                     <span>Git</span>
-                                    <div class="skill-bar">
-                                        <div class="skill-fill" style="width: 90%"></div>
-                                    </div>
                                 </div>
                                 <div class="skill-item">
-                                    <i class="fab fa-git-alt"></i>
-                                    <span>Github</span>
-                                    <div class="skill-bar">
-                                        <div class="skill-fill" style="width: 70%"></div>
-                                    </div>
-
+                                    <i class="devicon-github-original"></i>
+                                    <span>GitHub</span>
                                 </div>
                                 <div class="skill-item">
-                                    <i class="fas fa-code"></i>
+                                    <i class="devicon-intellij-plain colored"></i>
+                                    <span>IntelliJ</span>
+                                </div>
+                                <div class="skill-item">
+                                    <i class="devicon-vscode-plain colored"></i>
                                     <span>VS Code</span>
-                                    <div class="skill-bar">
-                                        <div class="skill-fill" style="width: 95%"></div>
-                                    </div>
-
                                 </div>
-                            </div>
-                        </div>
-                        <div class="skill-category">
-                            <h3>UI/UX Design</h3>
-                            <div class="skill-items">
                                 <div class="skill-item">
-                                    <i class="fab fa-figma"></i>
+                                    <i class="devicon-figma-plain colored"></i>
                                     <span>Figma</span>
-                                    <div class="skill-bar">
-                                        <div class="skill-fill" style="width: 85%"></div>
-                                    </div>
-                                </div>
-                                <div class="skill-item">
-                                    <i class="fas fa-palette"></i>
-                                    <span>Adobe XD</span>
-                                    <div class="skill-bar">
-                                        <div class="skill-fill" style="width: 75%"></div>
-                                    </div>
-                                </div>
-                                <div class="skill-item">
-                                    <i class="fas fa-mobile-alt"></i>
-                                    <span>Responsive Design</span>
-                                    <div class="skill-bar">
-                                        <div class="skill-fill" style="width: 90%"></div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -416,10 +370,10 @@
                                     using Java, HTML, CSS, and MySQL, it provides an intuitive interface for librarians
                                     and users.</p>
                                 <div class="project-tech">
-                                    <span>HTML</span>
-                                    <span>CSS</span>
-                                    <span>JSS</span>
-                                    <span>FIREBASE</span>
+                                    <span><i class="devicon-java-plain"></i> Java</span>
+                                    <span><i class="devicon-html5-plain"></i> HTML</span>
+                                    <span><i class="devicon-css3-plain"></i> CSS</span>
+                                    <span><i class="devicon-mysql-plain"></i> MySQL</span>
                                 </div>
                             </div>
                         </div>
@@ -445,10 +399,10 @@
                                     cryptocurrency prices and market trends. Built using HTML, CSS, JavaScript, and API
                                     integration, it provides an interactive dashboard with live data updates.</p>
                                 <div class="project-tech">
-                                    <span>HTML</span>
-                                    <span>Firebase</span>
-                                    <span> CSS</span>
-                                    <span>JS</span>
+                                    <span><i class="devicon-html5-plain"></i> HTML</span>
+                                    <span><i class="devicon-css3-plain"></i> CSS</span>
+                                    <span><i class="devicon-javascript-plain"></i> JS</span>
+                                    <span><i class="devicon-firebase-plain"></i> Firebase</span>
                                 </div>
                             </div>
                         </div>
@@ -474,10 +428,10 @@
                                     worldwide. Developed using HTML, CSS, JavaScript, and the OpenWeatherMap API, it
                                     provides users with accurate temperature, humidity, and weather conditions..</p>
                                 <div class="project-tech">
-                                    <span>HTML</span>
-                                    <span>Firebase</span>
-                                    <span> CSS</span>
-                                    <span>JS</span>
+                                    <span><i class="devicon-html5-plain"></i> HTML</span>
+                                    <span><i class="devicon-css3-plain"></i> CSS</span>
+                                    <span><i class="devicon-javascript-plain"></i> JS</span>
+                                    <span><i class="devicon-firebase-plain"></i> Firebase</span>
                                 </div>
                             </div>
                         </div>
@@ -504,10 +458,10 @@
                                     provides detailed movie information, trailers, and ratings in a visually appealing
                                     interface</p>
                                 <div class="project-tech">
-                                    <span>HTML5</span>
-                                    <span>CSS3</span>
-                                    <span>JavaScript</span>
-                                    <span>Firebase</span>
+                                    <span><i class="devicon-html5-plain"></i> HTML5</span>
+                                    <span><i class="devicon-css3-plain"></i> CSS3</span>
+                                    <span><i class="devicon-javascript-plain"></i> JavaScript</span>
+                                    <span><i class="devicon-firebase-plain"></i> Firebase</span>
                                 </div>
                             </div>
                         </div>
@@ -533,10 +487,10 @@
                                     tournaments. Built using HTML, CSS, JavaScript, and Firebase, it allows players to
                                     register, view participants, and track match details in real time.</p>
                                 <div class="project-tech">
-                                    <span>HTML5</span>
-                                    <span>CSS3</span>
-                                    <span>JavaScript</span>
-                                    <span>Firebase</span>
+                                    <span><i class="devicon-html5-plain"></i> HTML5</span>
+                                    <span><i class="devicon-css3-plain"></i> CSS3</span>
+                                    <span><i class="devicon-javascript-plain"></i> JavaScript</span>
+                                    <span><i class="devicon-firebase-plain"></i> Firebase</span>
                                 </div>
                             </div>
                         </div>
@@ -562,10 +516,10 @@
                                     collection of movies and web shows.
                                 </p>
                                 <div class="project-tech">
-                                    <span>HTML5</span>
-                                    <span>CSS3</span>
-                                    <span>JavaScript</span>
-                                    <span>Firebase</span>
+                                    <span><i class="devicon-html5-plain"></i> HTML5</span>
+                                    <span><i class="devicon-css3-plain"></i> CSS3</span>
+                                    <span><i class="devicon-javascript-plain"></i> JavaScript</span>
+                                    <span><i class="devicon-firebase-plain"></i> Firebase</span>
                                 </div>
                             </div>
                         </div>
@@ -579,16 +533,16 @@
                 <p class="connect-text">Let's connect and collaborate! You can find me on these platforms 👇</p>
 
                 <div class="social-links">
-                    <a href="https://github.com/shivmundhe7" target="_blank" class="social-link">
+                    <a href="https://github.com/shivmundhe7" target="_blank" class="social-link github">
                         <i class="fab fa-github"></i> GitHub
                     </a>
-                    <a href="https://www.linkedin.com/in/shivshankar-mundhe/" target="_blank" class="social-link">
+                    <a href="https://www.linkedin.com/in/shivshankar-mundhe/" target="_blank" class="social-link linkedin">
                         <i class="fab fa-linkedin"></i> LinkedIn
                     </a>
-                    <a href="https://www.instagram.com/shiv_mundhe_7" target="_blank" class="social-link">
+                    <a href="https://www.instagram.com/shiv_mundhe_7" target="_blank" class="social-link instagram">
                         <i class="fab fa-instagram"></i> Instagram
                     </a>
-                    <a href="https://twitter.com/shivmundhe7" target="_blank" class="social-link">
+                    <a href="https://twitter.com/shivmundhe7" target="_blank" class="social-link twitter">
                         <i class="fab fa-twitter"></i> Twitter
                     </a>
                 </div>
@@ -605,7 +559,7 @@
                             </div>
                             <div class="contact-details">
                                 <h3>Email</h3>
-                                <p>Shivmundhe16@example.com</p>
+                                <p>Shivmundhe16@gmail.com</p>
                                 <a href="mailto:shivmundhe16@example.com">Send Email</a>
                             </div>
                         </div>
@@ -637,11 +591,11 @@
                             <div class="contact-details">
                                 <h3>WhatsApp</h3>
                                 <p>+91 7972932282</p>
-                                <a href="#" target="_blank">Send Message</a>
+                                <a href="https://wa.me/917972932282" target="_blank">Send Message</a>
                             </div>
                         </div>
                         <div class="social-links">
-                            <a href="+91 79 7293 2282" aria-label="WhatsApp" class="social-icon whatsapp">
+                            <a href="https://wa.me/917972932282" aria-label="WhatsApp" class="social-icon whatsapp">
                                 <i class="fab fa-whatsapp"></i>
                             </a>
                             <a href="https://www.linkedin.com/in/shivshankar-mundhe-4a0320367/" aria-label="LinkedIn"

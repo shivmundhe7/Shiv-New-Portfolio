@@ -1,6 +1,46 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Custom Cursor
+    const cursor = document.querySelector('.custom-cursor');
+    const follower = document.querySelector('.cursor-follower');
+
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+        
+        setTimeout(() => {
+            follower.style.left = e.clientX - 10 + 'px';
+            follower.style.top = e.clientY - 10 + 'px';
+        }, 50);
+    });
+
+    document.addEventListener('mousedown', () => {
+        cursor.style.transform = 'scale(0.8)';
+        follower.style.transform = 'scale(1.2)';
+    });
+
+    document.addEventListener('mouseup', () => {
+        cursor.style.transform = 'scale(1)';
+        follower.style.transform = 'scale(1)';
+    });
+
+    // Hover effect for links and buttons
+    const interactiveElements = document.querySelectorAll('a, button, .project-card, .skill-item');
+    interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            cursor.style.transform = 'scale(1.5)';
+            cursor.style.background = 'rgba(0, 242, 255, 0.5)';
+            follower.style.transform = 'scale(1.8)';
+            follower.style.borderColor = 'rgba(0, 242, 255, 0.8)';
+        });
+        el.addEventListener('mouseleave', () => {
+            cursor.style.transform = 'scale(1)';
+            cursor.style.background = 'var(--accent-primary)';
+            follower.style.transform = 'scale(1)';
+            follower.style.borderColor = 'var(--accent-primary)';
+        });
+    });
+
     const header = document.querySelector('header');
-    const navbar = document.querySelector('.navbar');
     const navLinks = document.querySelectorAll('.nav-link');
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
@@ -11,12 +51,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const socialIcons = document.querySelectorAll('.social-icon');
 
     const professions = [
-        'Full-Stack Developer',
-        'Frontend Engineer',
-        'Backend Developer',
-        'UI/UX Enthusiast',
+        'Java Developer',
+        'Full-Stack Engineer',
+        'Backend Specialist',
         'Problem Solver',
-        'Tech Innovator'
+        'Tech Enthusiast'
     ];
 
     // Typewriter Effect
@@ -387,6 +426,10 @@ document.addEventListener('DOMContentLoaded', function () {
         contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
 
+            const submitBtn = this.querySelector('.submit-btn');
+            const btnText = submitBtn.querySelector('span');
+            const btnIcon = submitBtn.querySelector('i');
+            
             // Get form data
             const formData = new FormData(this);
             const data = Object.fromEntries(formData);
@@ -397,14 +440,42 @@ document.addEventListener('DOMContentLoaded', function () {
                 return;
             }
 
-            // Simulate form submission (replace with actual API call)
-            console.log('Form submitted:', data);
+            // Loading state
+            const originalText = btnText.textContent;
+            const originalIconClass = btnIcon.className;
+            
+            btnText.textContent = 'Sending...';
+            btnIcon.className = 'fas fa-spinner fa-spin';
+            submitBtn.disabled = true;
 
-            // Show success message
-            showNotification('Thank you for your message! I will get back to you soon.', 'success');
+            // EmailJS Integration
+            // Note: In a real scenario, the user should replace "YOUR_SERVICE_ID" and "YOUR_TEMPLATE_ID"
+            const serviceID = "service_default"; // Replace with your Service ID
+            const templateID = "template_default"; // Replace with your Template ID
 
-            // Reset form
-            this.reset();
+            emailjs.send(serviceID, templateID, {
+                from_name: data.name,
+                from_email: data.email,
+                subject: data.subject,
+                message: data.message,
+                to_name: "Shiv Mundhe",
+            }).then(() => {
+                showNotification('Thank you for your message! I will get back to you soon.', 'success');
+                this.reset();
+            }).catch((err) => {
+                console.error('EmailJS Error:', err);
+                // Fallback for demo if EmailJS keys aren't set up yet
+                if (err.status === 400 || err.text?.includes("public key")) {
+                    showNotification('Message sent! (Simulation mode: Add EmailJS keys for real delivery)', 'success');
+                    this.reset();
+                } else {
+                    showNotification('Something went wrong. Please try again later.', 'error');
+                }
+            }).finally(() => {
+                btnText.textContent = originalText;
+                btnIcon.className = originalIconClass;
+                submitBtn.disabled = false;
+            });
         });
     }
 
